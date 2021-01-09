@@ -491,6 +491,11 @@ SharkGame.Home = {
         }
 
         if (SharkGame.Settings.current.showTabHelp) {
+            /* If the created resource has an effect, display it */
+            const generatedResource = SharkGame.ResourceTable?.[Object.keys(actionData.effect.resource)[0]]
+            if (generatedResource.income !== undefined) {
+                    label += `<br><span>Generates: ${r.resourceListToString(generatedResource.income)}</span>`;
+            }
             if (actionData.helpText) {
                 label += "<br><span class='medDesc'>" + actionData.helpText + "</span>";
             }
