@@ -494,7 +494,7 @@ SharkGame.Home = {
             /* If the created resource has an effect, display it */
             const generatedResource = SharkGame.ResourceTable?.[Object.keys(actionData.effect.resource)[0]]
             if (generatedResource.income !== undefined) {
-                    label += `<br><span>Generates: ${r.resourceListToString(generatedResource.income)}</span>`;
+                    label += `<br><span>Collects ${r.resourceListToString(generatedResource.income)} every second</span>`;
             }
             if (actionData.helpText) {
                 label += "<br><span class='medDesc'>" + actionData.helpText + "</span>";
